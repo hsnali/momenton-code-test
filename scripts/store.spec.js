@@ -11,7 +11,7 @@ test('store has at least one entry', () => {
 test('a random store entry has at least an id and name property', () => {
   const index = Math.floor(Math.random() * store.length)
   const entry = store[index]
-  console.log(entry)
+
   expect(entry).toMatchObject({
     id: expect.any(Number),
     name: expect.any(String)
