@@ -19,7 +19,8 @@ Design a suitable representation of this data. Feel free to choose any database 
 database etc), file system or even a data structure like List or Map. Then write code
 (in any language and framework) that displays the organisation hierarchy as below:
 
-
+|       |       |        |
+|-------|-------|--------|
 | Jamie |       |        |
 |       |       |        |
 |       | Alan  |        |
