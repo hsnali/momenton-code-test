@@ -2,8 +2,9 @@
   "name": "momenton-code-test",
   "version": "1.0.0",
   "description": "code test for momenton",
-  "main": "index.js",
+  "main": "scripts/main.js",
   "dependencies": {
+    "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "eslint": "^4.4.1",
     "eslint-plugin-import": "^2.7.0",
@@ -16,8 +17,15 @@
     "eslint-plugin-standard": "^3.0.1"
   },
   "scripts": {
+    "start": "babel-node scripts/main.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "coverageReporters": [
+      "html"
+    ]
   },
   "author": "Hassan Ali",
   "license": "ISC"
