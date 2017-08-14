@@ -12,6 +12,8 @@ To run the solution to see if expected results are printed out run
 
 To run the tests to the solution
 `npm test`
+
+Code coverage can be viewed with `npm run test:coverage`
 # Description
 
 Below is employee data of a small company.
