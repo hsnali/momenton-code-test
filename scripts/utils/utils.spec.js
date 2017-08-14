@@ -1,7 +1,8 @@
 import { getEmployeeById,
   getManagerForEmployee,
   getEmployeesByMangerId,
-  getEmployeesByIdRange } from './utils'
+  getEmployeesByIdRange,
+  getTopLevelManagers } from './utils'
 
 describe('getting an employee by id', () => {
 
@@ -81,5 +82,13 @@ describe('get all employees with id in a given range', () => {
         name: 'Alan'
       }
     ])
+  })
+})
+
+describe('get all employees with no manager (top level employees)', () => {
+  test('returns an array of employees with no manager id', () => {
+    const result = getTopLevelManagers()
+
+    expect(result[0].managerId).toBe(undefined)
   })
 })

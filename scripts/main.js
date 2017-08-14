@@ -1,8 +1,8 @@
-import {getTopLevelManagers,
+import { getTopLevelManagers,
   getEmployeesByMangerId,
-  getEmployeesByIdRange} from './utils/utils'
+  getEmployeesByIdRange } from './utils/utils'
 
-const firstQuery = getTopLevelManagers()
+const firstQuery = getTopLevelManagers(150)
 firstQuery.map(employee => console.log(employee.name))
 
 console.log('------------')

@@ -17,3 +17,7 @@ export const getEmployeesByMangerId = (id) => {
 export const getEmployeesByIdRange = (min, max) => {
   return store.filter(employee => employee.id >= min && employee.id <= max)
 }
+
+export const getTopLevelManagers = () => {
+  return store.filter(employee => !employee.managerId)
+}
