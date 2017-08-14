@@ -1,3 +1,17 @@
+# Solution Branch 1
+
+## Setup
+
+You will need to setup the project dependecies using yarn, so first run
+`yarn insall`
+
+## Runnign the solution
+
+To run the solution to see if expected results are printed out run
+`npm start`
+
+To run the tests to the solution
+`npm test`
 # Description
 
 Below is employee data of a small company.
