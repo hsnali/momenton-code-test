@@ -5,14 +5,31 @@ import { getEmployeeById,
 
 describe('getting an employee by id', () => {
 
-  test('return undefined if no employee found', () => {
+  test('if no employee found return undefined', () => {
     const result = getEmployeeById()
 
-    expect(result).toBe(undefined)
+    expect(result).toBe()
+  })
+
+  test('returns the first found employee by id', () => {
+    const result = getEmployeeById(100)
+
+    expect(result).toEqual({
+      id: 100,
+      managerId: 150,
+      name: 'Alan'
+    })
   })
 })
 
-describe('returns an employee manager', () => {
+describe('getting an employees manager', () => {
+
+  test('if no employee found returns undefined', () => {
+    const result = getManagerForEmployee()
+
+    expect(result).toBe(undefined)
+  })
+
   test('if no manager for employee, returns employee (self managing)', () => {
     const result = getManagerForEmployee(150)
     const manager = getEmployeeById(150)
