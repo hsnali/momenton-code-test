@@ -5,7 +5,6 @@ import { getEmployeeById,
   getTopLevelManagers } from './utils'
 
 describe('getting an employee by id', () => {
-
   test('if no employee found return undefined', () => {
     const result = getEmployeeById()
 
@@ -24,7 +23,6 @@ describe('getting an employee by id', () => {
 })
 
 describe('getting an employees manager', () => {
-
   test('if no employee found returns undefined', () => {
     const result = getManagerForEmployee()
 
