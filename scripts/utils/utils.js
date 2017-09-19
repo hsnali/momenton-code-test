@@ -18,6 +18,23 @@ export const getEmployeesByIdRange = (min, max) => {
   return store.filter(employee => employee.id >= min && employee.id <= max)
 }
 
-export const getTopLevelManagers = () => {
+export const getCEO = () => {
   return store.filter(employee => !employee.managerId)
+}
+
+export const getEmployeesFor = (person) => {
+  const employees = getEmployeesByMangerId(person.id)
+
+  if (employees.length) {
+    const suborg = {}
+    suborg[person.name] = employees.map(employee => getEmployeesFor(employee))
+    return suborg
+  }
+
+  return person.name
+}
+
+export const getOrganisationHeirarchy = () => {
+  const CEO = getCEO()[0]
+  return getEmployeesFor(CEO)
 }

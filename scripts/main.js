@@ -1,18 +1,5 @@
-// import { getTopLevelManagers,
-//   getEmployeesByMangerId,
-//   getEmployeesByIdRange } from './utils/utils'
+import { getOrganisationHeirarchy } from './utils/utils'
 
-// const firstQuery = getTopLevelManagers(150)
-// firstQuery.map(employee => console.log(employee.name))
+const organisation = JSON.stringify(getOrganisationHeirarchy());
 
-// console.log('------------')
-
-// const secondQuery = getEmployeesByMangerId(150)
-// secondQuery.map(employee => console.log(employee.name))
-
-// console.log('------------')
-
-// const thirdQuery = getEmployeesByIdRange(190, 300)
-// thirdQuery.map(employee => console.log(employee.name))
-
-// console.log('------------')
+console.log(organisation)

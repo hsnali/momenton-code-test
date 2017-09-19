@@ -2,7 +2,10 @@ import { getEmployeeById,
   getManagerForEmployee,
   getEmployeesByMangerId,
   getEmployeesByIdRange,
-  getTopLevelManagers } from './utils'
+  getCEO,
+  getOrganisationHeirarchy } from './utils'
+
+import store from '../store/store'
 
 describe('getting an employee by id', () => {
   test('if no employee found return undefined', () => {
@@ -83,10 +86,23 @@ describe('get all employees with id in a given range', () => {
   })
 })
 
-describe('get all employees with no manager (top level employees)', () => {
-  test('returns an array of employees with no manager id', () => {
-    const result = getTopLevelManagers()
+describe('get the CEO', () => {
+  test('returns an array of one employee with no manager id', () => {
+    const result = getCEO()
 
     expect(result[0].managerId).toBe(undefined)
+  })
+})
+
+describe('get the organisation heirarchy of users', () => {
+  test('returns all users with their direct subordinates (if any)', () => {
+    const organisation = {
+      'Jamie': [
+        {'Alan': ['Martin', 'Alex']},
+        {'Steve': ['David']}
+      ]
+    }
+    const result = getOrganisationHeirarchy()
+    expect(result).toEqual(organisation)
   })
 })
